@@ -83,6 +83,8 @@ a.logo img{
     color: white;
     box-shadow: 0 1px 10px rgba(0,0,0,.1);
     background-image: linear-gradient(to left,#cc2b5e,#753a88);
+    z-index: 200;
+    background-color: #753a88;
 }
 
 #header-main a{
@@ -95,7 +97,8 @@ a.logo img{
 }
 
 #content{
-    margin: 95px auto 0
+    margin: 45px auto 0;
+    padding-top: 50px;
 }
 
 #middle-content{
@@ -127,8 +130,8 @@ ul#tools li .glyphicon{
 
 ul#tools li span.img-wrapper{
     background: #fff;
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
     overflow: hidden;
     border-radius: 50%;
     padding: 0;
@@ -182,7 +185,6 @@ ul#tools li span img{
 #bucket .bucket-item{
     background: white;
     padding: 16px;
-    min-height: 110px;
 }
 
 #bucket .bucket-item + .bucket-item{
@@ -223,6 +225,7 @@ body.masked #floating-actions{
     height: 100%;
     overflow: hidden;
     pointer-events: none;
+    z-index: 999;
 }
 
 body.masked #overlay{
@@ -349,4 +352,56 @@ ul#account-menu-options li + li{
 #notifications .notification .ntf-details{
     font-size: 12px;
     color: #a5a3a3;
+}
+
+/* bucket item */
+
+.bucket-item{
+    display: flex;
+    position: relative;
+}
+
+.item-date{
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-date .mon-year{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+.item-details{
+    margin-left: 20px;
+    color: #777;
+    width: calc(100% - 80px);
+}
+
+.item-notes{
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.item-date .day{
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: pink;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+}
+
+.item-details .item-title{
+    font-size: 19px;
+    color: #555
+}
+
+.item-actions{
+    margin-top: 14px;
 }

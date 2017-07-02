@@ -185,6 +185,17 @@ ul#tools li span img{
 #bucket .bucket-item{
     background: white;
     padding: 16px;
+    border-left: 3px solid #bbbbbb;
+    box-shadow: 1px 1px 20px rgba(0,0,0,.1);
+}
+
+#bucket .bucket-item.complete{
+    border-left-color: #48cc54;
+}
+
+#bucket .bucket-item.complete .item-details,
+#bucket .bucket-item.complete .item-date{
+    opacity: .3;
 }
 
 #bucket .bucket-item + .bucket-item{
@@ -195,7 +206,7 @@ ul#tools li span img{
     position: fixed;
     right: 60px;
     bottom: 60px;
-    z-index: 2000
+    z-index: 300;
 }
 
 body.masked #floating-actions{
@@ -243,7 +254,7 @@ body.masked #overlay{
     height: 100%;
     background: rgba(0, 0, 0, .3);
     opacity: 0;
-    transition: opacity .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: opacity 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 body.masked #overlay:after{
@@ -361,6 +372,50 @@ ul#account-menu-options li + li{
     position: relative;
 }
 
+.item-options-menu{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 5;
+}
+
+.item-options-menu .ellipses{
+    color: #a9a9a9;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px;
+}
+
+.item-options-menu .actions{
+    position: absolute;
+    right: 0;
+    min-width: 140px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .1);
+    font-size: 12px;
+    padding: 6px;
+    z-index: 2;
+    display: none;
+}
+
+.item-options-menu .actions .action{
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #777777;
+    text-decoration: none;
+}
+
+.item-options-menu .actions .action:hover{
+    background: #eee;
+}
+
+.item-options-menu .actions .action + .action{
+    border-top: 1px solid #eee;
+}
+
 .item-date{
     width: 80px;
     display: flex;
@@ -374,10 +429,28 @@ ul#account-menu-options li + li{
     color: #777;
 }
 
+.status-icon{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-icon svg{
+    width: 25px;
+    height: 25px;
+    margin-left: -5px;
+}
+
+.status-icon .icon-text{
+    font-size: 12px;
+    color: #999;
+}
+
 .item-details{
     margin-left: 20px;
     color: #777;
-    width: calc(100% - 80px);
+    width: calc(100% - 20px);
 }
 
 .item-notes{
